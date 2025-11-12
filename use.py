@@ -5,8 +5,8 @@ import cv2
 model = YOLO('best (1).pt')  # path to your downloaded weights
 
 # --- Path to your video ---
-video_path = 'WIN_20251107_22_55_26_Pro.mp4'  # change to your video filename
-cap = cv2.VideoCapture(video_path)
+video_path = 'WhatsApp Video 2025-11-08 at 19.31.07.mp4'  # change to your video filename
+cap = cv2.VideoCapture(2)
 
 # --- Check if video opened successfully ---
 if not cap.isOpened():

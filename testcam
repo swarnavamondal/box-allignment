@@ -1,0 +1,50 @@
+import cv2
+
+# The number 0 is almost always the default/built-in webcam.
+# We'll check up to index 10, which should be enough for most setups.
+MAX_CAMERAS_TO_CHECK = 10 
+available_cameras = []
+
+print("Probing camera indices...")
+
+for i in range(MAX_CAMERAS_TO_CHECK):
+    # Try to open the video capture at the current index 'i'
+    cap = cv2.VideoCapture(i)
+    
+    # Check if the camera was successfully opened
+    if cap.isOpened():
+        # Read a frame to confirm it's a working camera and not a placeholder
+        ret, frame = cap.read()
+        
+        if ret:
+            available_cameras.append(i)
+            # You can uncomment the lines below to see which camera is which visually
+            # print(f"--- Camera index {i} is working. Press 'q' to check next. ---")
+            # while True:
+            #     ret, frame = cap.read()
+            #     if not ret:
+            #         break
+            #     cv2.imshow(f"Camera Index {i}", frame)
+            #     if cv2.waitKey(1) & 0xFF == ord('q'):
+            #         break
+            # cv2.destroyWindow(f"Camera Index {i}")
+        
+        cap.release()
+        
+    else:
+        # Stop checking if several consecutive indices fail, 
+        # as they are usually assigned sequentially.
+        if i > 0 and i not in available_cameras and i-1 not in available_cameras and i-2 not in available_cameras:
+             # This is a heuristic, adjust MAX_CAMERAS_TO_CHECK if you have many cameras
+             # but it prevents checking 100 failed indices unnecessarily.
+             pass 
+
+if available_cameras:
+    print("\n✅ Found working camera indices:")
+    for index in available_cameras:
+        print(f"   - Index: {index}")
+    print("\nUse one of these indices in `cv2.VideoCapture(<index>)`.")
+else:
+    print("\n❌ No working cameras found in the checked range.")
+
+cv2.destroyAllWindows()

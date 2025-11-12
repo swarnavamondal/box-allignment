@@ -6,11 +6,10 @@ import numpy as np
 model = YOLO('best (1).pt')  # path to your trained weights
 
 # --- Path to your input video ---
-video_path = 'WIN_20251107_22_55_26_Pro.mp4'
+#video_path = 'WIN_20251107_22_55_26_Pro.mp4'
 cap = cv2.VideoCapture(4)
-
 if not cap.isOpened():
-    print(" Could not open video file.")
+    print("Could not open video file.")
     exit()
 
 # --- Define blue color range in HSV ---
@@ -25,6 +24,10 @@ while True:
     # Optional: resize for faster processing
     frame = cv2.resize(frame, (640, 480))
 
+    height, width, _ = frame.shape
+    centre = width // 2
+    margin = 130
+
     # --- YOLO detection ---
     results = model.predict(source=frame, conf=0.5, verbose=False)
 
@@ -34,12 +37,9 @@ while True:
     # --- Create mask for blue color ---
     mask = cv2.inRange(hsv, lower_blue, upper_blue)
 
-    '''height, width, _ = frame.shape
-    centre = width // 2
-    margin = 130
-
     cv2.line(frame, (centre-margin,0),(centre-margin, height), (255,255,255), 2)
-    cv2.line(frame, (centre+margin,0),(centre+margin, height), (255,255,255), 2)'''
+    cv2.line(frame, (centre+margin,0),(centre+margin, height), (255,255,255), 2)
+
     # --- Annotate YOLO detections ---
     annotated_frame = frame.copy()
 
@@ -54,20 +54,23 @@ while True:
         blue_ratio = (cv2.countNonZero(roi) / roi.size) if roi.size > 0 else 0
 
         # Only show boxes if mostly blue
-        if blue_ratio > 0.2:  # 20% of region is blue
+        if blue_ratio > 0.3:  # 30% of region is blue
             cv2.rectangle(annotated_frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
             cv2.putText(annotated_frame, f"{label} {conf:.2f}", (x1, y1 - 10),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2)
-            area = (x2 - x1) * (y2 - y1)
-            cv2.putText(annotated_frame, f"area: {area}", (70, 30),
-                      cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2)
-            print(area)
-            '''if area >=40000 and area <= 60000:
+            
+            cv2.line(annotated_frame,(x1,y1),(x1,y2),(255,255,0),4)
+            cv2.line(annotated_frame,(x2,y1),(x2,y2),(255,255,0),4)
+
+            if x1 >= (centre - margin) and x2 <= (centre + margin):
                 cv2.putText(annotated_frame, "Box aligning", (200, 30),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
             else:
                 cv2.putText(annotated_frame, "Box not aligning", (200, 30),
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)'''
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+
+
+
 
     # --- Display the result ---
     cv2.imshow("YOLO + HSV Blue Detection", annotated_frame)
