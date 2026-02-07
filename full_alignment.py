@@ -3,11 +3,11 @@ import cv2
 import numpy as np
 
 # --- Load your trained YOLOv8 model ---
-model = YOLO('best (1).pt')  # path to your trained weights
+model = YOLO(r'/home/ghost/Desktop/swarnava/box-allignment/best (1).pt')  # path to your trained weights
 
 # --- Path to your input video ---
 #video_path = 'WIN_20251107_22_55_26_Pro.mp4'
-cap = cv2.VideoCapture(4)
+cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Could not open video file.")
     exit()
@@ -15,6 +15,10 @@ if not cap.isOpened():
 # --- Define blue color range in HSV ---
 lower_blue = np.array([90, 70, 50])    
 upper_blue = np.array([130, 255, 255])
+
+min_area = 70000
+max_area = 80000
+margin = 150
 
 while True:
     ret, frame = cap.read()
@@ -26,7 +30,7 @@ while True:
 
     height, width, _ = frame.shape
     centre = width // 2
-    margin = 160
+    
 
     # --- YOLO detection ---
     results = model.predict(source=frame, conf=0.5, verbose=False)
@@ -65,16 +69,16 @@ while True:
             area = (x2 - x1) * (y2 - y1)
             cv2.putText(annotated_frame, f"area: {area}", (70, 30),
                       cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2)
-            print(area)
+            
 
             # Determine area difference from target range
             areadifference=0
-            if area<70000:
-                areadifference=70000-area
+            if area<min_area:
+                areadifference=min_area-area
                 cv2.putText(annotated_frame,"move forward", (70, 300),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2)
-            elif area>80000:
-                areadifference=80000-area
+            elif area>max_area:
+                areadifference=max_area-area
                 cv2.putText(annotated_frame,"move backward", (70, 300),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2)
 
@@ -89,7 +93,7 @@ while True:
                 cv2.putText(annotated_frame,"move right", (70, 200),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2)
 
-            if area >=70000 and area <= 80000:
+            if area >=min_area and area <= max_area:
                 cv2.putText(annotated_frame, "Z-Box aligning", (200, 400),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
             else:
@@ -102,15 +106,17 @@ while True:
             else:
                 cv2.putText(annotated_frame, "Box not aligning", (200, 30),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+            print(areadifference,xdifference)
 
 
 
 
     # --- Display the result ---
-    cv2.imshow("YOLO + HSV Blue Detection", annotated_frame)
+    # cv2.imshow("YOLO + HSV Blue Detection", annotated_frame)
+    cv2.imwrite(r"/home/ghost/Desktop/swarnava/box-allignment/img.png", annotated_frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    # if cv2.waitKey(1) & 0xFF == ord('q'):
+    #     break
 
 cap.release()
 cv2.destroyAllWindows()
