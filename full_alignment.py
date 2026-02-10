@@ -3,11 +3,11 @@ import cv2
 import numpy as np
 
 # --- Load your trained YOLOv8 model ---
-model = YOLO(r'/home/ghost/Desktop/swarnava/box-allignment/best (1).pt')  # path to your trained weights
+model = YOLO(r'/home/swarnava/Arduino/robocon 2026/box-allignment_7feb/box-allignment/best (1).pt')  # path to your trained weights
 
 # --- Path to your input video ---
 #video_path = 'WIN_20251107_22_55_26_Pro.mp4'
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(4)
 if not cap.isOpened():
     print("Could not open video file.")
     exit()
@@ -113,7 +113,7 @@ while True:
 
     # --- Display the result ---
     # cv2.imshow("YOLO + HSV Blue Detection", annotated_frame)
-    cv2.imwrite(r"/home/ghost/Desktop/swarnava/box-allignment/img.png", annotated_frame)
+    cv2.imwrite(r'/home/swarnava/Arduino/robocon 2026/box-allignment_7feb/box-allignment/img.png', annotated_frame)
 
     # if cv2.waitKey(1) & 0xFF == ord('q'):
     #     break
