@@ -1,0 +1,9 @@
+source;share/align_pkg/hook/pythonpath.ps1
+source;share/align_pkg/hook/pythonpath.dsv
+source;share/align_pkg/hook/pythonpath.sh
+source;share/align_pkg/hook/ament_prefix_path.ps1
+source;share/align_pkg/hook/ament_prefix_path.dsv
+source;share/align_pkg/hook/ament_prefix_path.sh
+source;../../build/align_pkg/share/align_pkg/hook/pythonpath_develop.ps1
+source;../../build/align_pkg/share/align_pkg/hook/pythonpath_develop.dsv
+source;../../build/align_pkg/share/align_pkg/hook/pythonpath_develop.sh

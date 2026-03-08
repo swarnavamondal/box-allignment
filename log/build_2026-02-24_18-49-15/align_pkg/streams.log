@@ -1,0 +1,19 @@
+[0.432s] Invoking command in '/home/swarnava/align_ws/build/align_pkg': PYTHONPATH=/home/swarnava/align_ws/build/align_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/swarnava/align_ws/build/align_pkg/build --no-deps symlink_data
+[0.598s] running develop
+[0.717s] running egg_info
+[0.718s] writing align_pkg.egg-info/PKG-INFO
+[0.718s] writing dependency_links to align_pkg.egg-info/dependency_links.txt
+[0.718s] writing entry points to align_pkg.egg-info/entry_points.txt
+[0.718s] writing requirements to align_pkg.egg-info/requires.txt
+[0.718s] writing top-level names to align_pkg.egg-info/top_level.txt
+[0.719s] reading manifest file 'align_pkg.egg-info/SOURCES.txt'
+[0.719s] writing manifest file 'align_pkg.egg-info/SOURCES.txt'
+[0.720s] running build_ext
+[0.721s] Creating /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align-pkg.egg-link (link to .)
+[0.721s] Installing kfs_alignment_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+[0.721s] Installing publish_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+[0.721s] Installing test_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+[0.721s] 
+[0.721s] Installed /home/swarnava/align_ws/build/align_pkg
+[0.721s] running symlink_data
+[0.739s] Invoked command in '/home/swarnava/align_ws/build/align_pkg' returned '0': PYTHONPATH=/home/swarnava/align_ws/build/align_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/swarnava/align_ws/build/align_pkg/build --no-deps symlink_data

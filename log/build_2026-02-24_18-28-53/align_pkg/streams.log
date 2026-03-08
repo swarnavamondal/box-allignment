@@ -1,0 +1,36 @@
+[0.503s] Invoking command in '/home/swarnava/align_ws/build/align_pkg': PYTHONPATH=/home/swarnava/align_ws/build/align_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/swarnava/align_ws/build/align_pkg/build
+[0.672s] running develop
+[0.801s] Removing /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align-pkg.egg-link (link to .)
+[0.819s] Invoked command in '/home/swarnava/align_ws/build/align_pkg' returned '0': PYTHONPATH=/home/swarnava/align_ws/build/align_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/swarnava/align_ws/build/align_pkg/build
+[0.821s] Invoking command in '/home/swarnava/align_ws/src/align_pkg': PYTHONPATH=/home/swarnava/align_ws/build/align_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/align_pkg build --build-base /home/swarnava/align_ws/build/align_pkg/build install --record /home/swarnava/align_ws/build/align_pkg/install.log --single-version-externally-managed install_data --force
+[0.979s] running egg_info
+[0.980s] writing ../../build/align_pkg/align_pkg.egg-info/PKG-INFO
+[0.980s] writing dependency_links to ../../build/align_pkg/align_pkg.egg-info/dependency_links.txt
+[0.980s] writing entry points to ../../build/align_pkg/align_pkg.egg-info/entry_points.txt
+[0.980s] writing requirements to ../../build/align_pkg/align_pkg.egg-info/requires.txt
+[0.980s] writing top-level names to ../../build/align_pkg/align_pkg.egg-info/top_level.txt
+[0.981s] reading manifest file '../../build/align_pkg/align_pkg.egg-info/SOURCES.txt'
+[0.990s] writing manifest file '../../build/align_pkg/align_pkg.egg-info/SOURCES.txt'
+[0.990s] running build
+[0.990s] running build_py
+[0.991s] copying align_pkg/publish_node.py -> /home/swarnava/align_ws/build/align_pkg/build/lib/align_pkg
+[0.991s] copying align_pkg/sample_node.py -> /home/swarnava/align_ws/build/align_pkg/build/lib/align_pkg
+[0.991s] running install
+[0.991s] running install_lib
+[0.991s] creating /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg
+[0.991s] copying /home/swarnava/align_ws/build/align_pkg/build/lib/align_pkg/publish_node.py -> /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg
+[0.992s] copying /home/swarnava/align_ws/build/align_pkg/build/lib/align_pkg/__init__.py -> /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg
+[0.992s] copying /home/swarnava/align_ws/build/align_pkg/build/lib/align_pkg/sample_node.py -> /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg
+[0.992s] byte-compiling /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg/publish_node.py to publish_node.cpython-310.pyc
+[0.992s] byte-compiling /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg/__init__.py to __init__.cpython-310.pyc
+[0.992s] byte-compiling /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg/sample_node.py to sample_node.cpython-310.pyc
+[0.992s] running install_data
+[0.992s] copying resource/align_pkg -> /home/swarnava/align_ws/install/align_pkg/share/ament_index/resource_index/packages
+[0.993s] copying package.xml -> /home/swarnava/align_ws/install/align_pkg/share/align_pkg
+[0.993s] running install_egg_info
+[0.993s] Copying ../../build/align_pkg/align_pkg.egg-info to /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align_pkg-0.0.0-py3.10.egg-info
+[0.993s] running install_scripts
+[1.006s] Installing publish_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+[1.006s] Installing test_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+[1.006s] writing list of installed files to '/home/swarnava/align_ws/build/align_pkg/install.log'
+[1.020s] Invoked command in '/home/swarnava/align_ws/src/align_pkg' returned '0': PYTHONPATH=/home/swarnava/align_ws/build/align_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/align_pkg build --build-base /home/swarnava/align_ws/build/align_pkg/build install --record /home/swarnava/align_ws/build/align_pkg/install.log --single-version-externally-managed install_data --force

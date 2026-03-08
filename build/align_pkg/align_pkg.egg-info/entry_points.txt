@@ -1,0 +1,5 @@
+[console_scripts]
+kfs_alignment_node = align_pkg.kfs_alignment_node:main
+publish_node = align_pkg.publish_node:main
+test_node = align_pkg.sample_node:main
+

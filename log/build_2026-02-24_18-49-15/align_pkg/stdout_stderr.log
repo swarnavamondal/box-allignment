@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing align_pkg.egg-info/PKG-INFO
+writing dependency_links to align_pkg.egg-info/dependency_links.txt
+writing entry points to align_pkg.egg-info/entry_points.txt
+writing requirements to align_pkg.egg-info/requires.txt
+writing top-level names to align_pkg.egg-info/top_level.txt
+reading manifest file 'align_pkg.egg-info/SOURCES.txt'
+writing manifest file 'align_pkg.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/swarnava/align_ws/install/align_pkg/lib/python3.10/site-packages/align-pkg.egg-link (link to .)
+Installing kfs_alignment_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+Installing publish_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+Installing test_node script to /home/swarnava/align_ws/install/align_pkg/lib/align_pkg
+
+Installed /home/swarnava/align_ws/build/align_pkg
+running symlink_data
